@@ -10,4 +10,10 @@ public class BulletBuildItem : MonoBehaviour
     {
         TowerSpawner.instance.SetCurrBullet(bulletStat);
     }
+
+    public void OnToggle(bool isOn)
+    {
+        if (isOn)
+            TowerSpawner.instance.SetCurrBullet(bulletStat);
+    }
 }

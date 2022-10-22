@@ -8,6 +8,7 @@ TagManager:
   - Shot
   - TowerPosition
   - TowerRadius
+  - MapBoundary
   layers:
   - Default
   - TransparentFX

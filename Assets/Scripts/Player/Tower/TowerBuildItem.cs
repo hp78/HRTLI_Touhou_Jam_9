@@ -10,4 +10,10 @@ public class TowerBuildItem : MonoBehaviour
     {
         TowerSpawner.instance.SetCurrTower(towerStat);
     }
+
+    public void OnToggle(bool isOn)
+    {
+        if(isOn)
+            TowerSpawner.instance.SetCurrTower(towerStat);
+    }
 }

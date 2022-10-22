@@ -10,13 +10,13 @@ public class BulletStatSO : ScriptableObject
     public Sprite gameSprite;
 
     [Space(5)]
+    public float cooldown;
+
+    [Space(5)]
     public int cost;
 
     [Space(5)]
     public float range;
-
-    [Space(5)]
-    public float cooldown;
 
     [Space(5)]
     public float damage;
@@ -34,6 +34,9 @@ public class BulletStatSO : ScriptableObject
     [Space(5)]
     public float slowVal;
     public float slowDura;
+
+    [Space(5)]
+    public float boomerDmg;
 
     [Space(5)]
     public List<GameObject> pfSpawnOnHit;

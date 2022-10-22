@@ -37,5 +37,8 @@ public class TowerStatSO : ScriptableObject
     public float slowDura;
 
     [Space(5)]
+    public float boomerDmg;
+
+    [Space(5)]
     public List<GameObject> pfSpawnOnHit;
 }
