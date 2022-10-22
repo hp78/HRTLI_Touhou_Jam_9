@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57feb8a04682ab4783a46f2f40b8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 8
+  health: 1
+  speed: 5
   spriteR: {fileID: 8221992552982644165}
   color: {r: 1, g: 0, b: 0, a: 1}
   childSpawn: {fileID: 0}

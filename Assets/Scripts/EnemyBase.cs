@@ -24,6 +24,8 @@ public class EnemyBase : MonoBehaviour
 
     public Collider2D col;
 
+    float flickerDuration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class EnemyBase : MonoBehaviour
         if(!dead)
         {
             Movement();
-            
+            Flicker();
         }
     }
 
@@ -68,6 +70,10 @@ public class EnemyBase : MonoBehaviour
         health -= dmg;
         if (health <= 0)
             OnDeath();
+        else
+        {
+            flickerDuration = 0.15f;
+        }
     }
 
     void OnDeath()
@@ -89,7 +95,9 @@ public class EnemyBase : MonoBehaviour
     {
         for (int i = 0; i < childSpawnAmount; i++)
         {
-            GameObject temp = Instantiate(childSpawn, this.transform.position, Quaternion.identity);
+            float ranx = Random.Range(-0.2f, 0.2f);
+            float rany = Random.Range(-0.2f, 0.2f);
+            GameObject temp = Instantiate(childSpawn, this.transform.position+ new Vector3(ranx,rany,0.0f), Quaternion.identity);
 
             List<Transform> tempList = new List<Transform>();
 
@@ -110,6 +118,29 @@ public class EnemyBase : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TakeDamage(5);
+        if (collision.CompareTag("DamageBox"))
+        {
+            int results;
+            if(int.TryParse(collision.gameObject.name, out results))
+             TakeDamage(results);
+        }
+    }
+
+    void Flicker()
+    {
+        if (flickerDuration > 0.0f)
+        {
+            flickerDuration -= Time.deltaTime;
+
+            if (spriteR.color == Color.white)
+                spriteR.color = color;
+
+            else
+                spriteR.color = Color.white;
+
+        }
+        else
+            spriteR.color = color;
+
     }
 }

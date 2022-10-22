@@ -12,13 +12,18 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public List<Transform> movePoints;
+    int currentPoint;
+    bool showDirection =true; 
     public List<Waves> listOfWaves;
 
     public List<GameObject> listOfEnemies;
 
+    public GameObject directionShow;
+
     public int waveNumber;
-    public bool noMoreWave;
     public float timeStamp;
+
+    public bool noMoreWave;
 
     public bool allSpawned;
     public bool allDead;
@@ -27,13 +32,15 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Waves w in listOfWaves)
+        foreach (Waves w in listOfWaves)
         {
-            foreach(WaveDataSO wso in w.waves )
+            foreach (WaveDataSO wso in w.waves)
             {
                 wso.Spawned = false;
             }
         }
+        ShowDirection();
+
     }
 
     // Update is called once per frame
@@ -42,11 +49,16 @@ public class EnemySpawner : MonoBehaviour
         if (stageOngoing)
         {
             timeStamp += Time.deltaTime;
+
+            if(!allSpawned)
             CheckWaveSO();
+
+
             CheckEnemies();
         }
-        if (Input.GetKeyDown(KeyCode.S))
-            StartWave();
+
+        if (showDirection) Movement();
+        
     }
 
     public void StartWave()
@@ -56,7 +68,14 @@ public class EnemySpawner : MonoBehaviour
             timeStamp = 0;
 
             if (listOfWaves[waveNumber].waves.Count == 0)
+            {
                 stageOngoing = false;
+                allDead = true;
+                allSpawned = true;
+
+                if (waveNumber + 1 < listOfWaves.Count) waveNumber++;
+                else noMoreWave = true;
+            }
 
             else
             {
@@ -65,13 +84,13 @@ public class EnemySpawner : MonoBehaviour
                 allSpawned = false;
             }
         }
+        showDirection = false;
     }
 
     void CheckEnemies()
     {
         if (allSpawned)
         {
-            allDead = true;
             foreach (GameObject go in listOfEnemies)
             {
                 if (go.activeSelf)
@@ -81,7 +100,14 @@ public class EnemySpawner : MonoBehaviour
                 }
 
             }
+            allDead = true;
             stageOngoing = false;
+
+            foreach (WaveDataSO so in listOfWaves[waveNumber].waves)
+            {
+                so.Spawned = false;
+            }
+
             if (waveNumber + 1 < listOfWaves.Count) waveNumber++;
             else noMoreWave = true;
 
@@ -130,4 +156,36 @@ public class EnemySpawner : MonoBehaviour
         listOfEnemies.Clear();
 
     }
+
+    void Movement()
+    {
+        if ((Vector2.Distance(directionShow.transform.position, movePoints[currentPoint].position) > 0.1f))
+        {
+            directionShow.transform.position = Vector2.MoveTowards(directionShow.transform.position, movePoints[currentPoint].position, 15f * Time.deltaTime);
+        }
+        else
+        {
+            if (currentPoint + 1 < movePoints.Count)
+                currentPoint++;
+
+            else currentPoint = 0;
+        }
+
+    }
+
+    public void ShowDirection()
+    {
+        if (!noMoreWave)
+        {
+            if (listOfWaves[waveNumber].waves.Count == 0)
+                showDirection = false;
+            else
+            {
+                showDirection = true;
+                directionShow.transform.position = this.transform.position;
+                currentPoint = 0;
+            }
+        }
+    }
+
 }
