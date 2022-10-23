@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 15-YuugiTower 2
   m_EditorClassIdentifier: 
-  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cooldown: 0.1
-  cost: 1
+  towerName: 
+  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
+  cooldown: 2
+  cost: 12
   range: 2
-  damage: 1
+  damage: 0
   speed: 1
-  pierce: 1
+  pierce: 3
   dotDmg: 0
   dotDura: 0
   slowVal: 0
   slowDura: 0
+  boomerDmg: 0
   pfSpawnOnHit: []
+  pfSpawnOnExpire: []

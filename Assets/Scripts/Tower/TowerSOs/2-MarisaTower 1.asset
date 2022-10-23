@@ -12,15 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 2-MarisaTower 1
   m_EditorClassIdentifier: 
-  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cooldown: 0.1
-  cost: 1
+  towerName: 
+  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
+  cooldown: 0.7
+  cost: 4
   range: 2
-  damage: 1
+  damage: 0
   speed: 1
-  pierce: 1
+  pierce: 0
   dotDmg: 0
   dotDura: 0
   slowVal: 0
   slowDura: 0
-  pfSpawnOnHit: []
+  boomerDmg: 0
+  pfSpawnOnHit:
+  - {fileID: 3019386599004610990, guid: fbc21cd7d35367840aed05db0ef6e14e, type: 3}
+  pfSpawnOnExpire: []
