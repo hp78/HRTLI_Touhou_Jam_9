@@ -35,21 +35,21 @@ public class SpawnManager : MonoBehaviour
 
     public void CheckSpawnersAreDoneForCurrentWave()
     {
-        endOfWaves = true;
         foreach (EnemySpawner es in listOfSpawners)
         {
             if (!es.allDead)
             {
-                endOfWaves = false;
                 return;
             }
         }
 
-        if(!endOfStage)
+
+        if (!endOfStage)
         foreach (EnemySpawner es in listOfSpawners)
         {
             es.ShowDirection();
         }
+        endOfWaves = true;
         EndofWave();
 
     }
