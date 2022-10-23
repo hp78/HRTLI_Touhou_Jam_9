@@ -128,8 +128,13 @@ public class EnemyBase : MonoBehaviour
 
     void OnDeath()
     {
+        if (dead)
+            return;
+
         dead = true;
         col.enabled = false;
+
+        GameController.instance.AddGold(currentPoint);
 
         if (childSpawn)
         {
