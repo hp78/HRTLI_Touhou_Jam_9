@@ -14,6 +14,9 @@ public class EnemyBase : MonoBehaviour
     public SpriteRenderer spriteEyes;
     public SpriteRenderer spriteHatR;
     public SpriteRenderer spriteHatL;
+
+    public ParticleSystem slowEffect;
+    public ParticleSystem dotEffect;
     public Color color;
 
     [Space(25)]
@@ -132,6 +135,7 @@ public class EnemyBase : MonoBehaviour
         if(this.gameObject.activeSelf)
         if(dmg >= dotVal)
         {
+                if (dmg <= 0.0f) return;
             dotVal = dmg;
             dotDuration = duration;
             StopCoroutine(DamageOverTime());
@@ -142,7 +146,9 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeSlow(float val, float duration)
     {
-        if(val >= slowVal)
+        if (val <= 0.0f) return;
+
+        if (val >= slowVal)
         {
             slowVal = val;
             slowDuration = duration;
@@ -151,18 +157,31 @@ public class EnemyBase : MonoBehaviour
 
     void SlowOverTime()
     {
-        if (slowDuration < 0.0f) slowVal = 0.0f;
-        else slowDuration -= Time.deltaTime;
+        if (slowDuration < 0.0f)
+        {
+            slowEffect.Stop();
+            slowVal = 0.0f;
+        }
+        else
+        {
+            if(!slowEffect.isPlaying)
+            slowEffect.Play();
+            slowDuration -= Time.deltaTime;
+        }
     }
 
     IEnumerator DamageOverTime()
     {
         while(dotDuration >= 0.0f)
         {
+            if(!dotEffect.isPlaying)
+            dotEffect.Play();
             TakeDamage(dotVal / 4.0f);
             yield return new WaitForSeconds(0.25f);
             dotDuration -= 0.25f;
         }
+        dotEffect.Stop(); 
+
         dotVal = 0;
         yield return 0;
     }
