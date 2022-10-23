@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] int currGold = 0;
     [SerializeField] int currLife = 50;
-    [SerializeField] int currWave = 0;
+    [SerializeField] int currWave = 1;
 
     [Space(10)]
     [SerializeField] TowerStatSO[] towerStats;
@@ -153,6 +153,8 @@ public class GameController : MonoBehaviour
     public void StartNextWave()
     {
         SpawnManager.instance.StartNextWave();
+        _waveTxt.text = "Wave : " +SpawnManager.instance.currentWave;
+        currWave = SpawnManager.instance.currentWave;
     }
 
     public void ShowVictoryScreen()
@@ -248,7 +250,7 @@ public class GameController : MonoBehaviour
         // misc
         else if(val == 20)
         {
-            AddGold((int)((currWave + 1)*Random.Range(1,14.99f)));
+            AddGold((int)((currWave + 2)*Random.Range(1,29.99f)));
         }
         else if(val == 21)
         {
