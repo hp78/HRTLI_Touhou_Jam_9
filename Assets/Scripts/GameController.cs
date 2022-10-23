@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     [SerializeField] TMP_Text _waveTxt;
 
     [SerializeField] Button _buyButton;
+    [SerializeField] Button _nextWaveButton;
 
     [Space(10)]
     [SerializeField] GameObject _playerUnlockPanel;
@@ -83,18 +84,28 @@ public class GameController : MonoBehaviour
         }
 
         towerToggles[0].Select();
+        towerToggles[0].isOn = true;
         bulletToggles[0].Select();
+        bulletToggles[0].isOn = true;
+
+        RefreshBuildButton(towerStats[0], bulletStats[0]);
     }
 
     public void RefreshBuildButton(TowerStatSO towerStat, BulletStatSO bulletStat)
     {
-        _buyButton.interactable = (currGold > (towerStat.cost + bulletStat.cost));
+        _buyButton.interactable = (currGold >= (towerStat.cost + bulletStat.cost));
     }
 
     public void ShowEndWaveScreen()
     {
         AddInterest();
         _playerUnlockPanel.SetActive(true);
+        _nextWaveButton.interactable = true;
+    }
+
+    public void StartNextWave()
+    {
+        SpawnManager.instance.StartNextWave();
     }
 
     public void ShowVictoryScreen()
@@ -176,7 +187,7 @@ public class GameController : MonoBehaviour
         // shots
         else if(val <20)
         {
-            unlockedBullets[val] += 1;
+            unlockedBullets[val - 10] += 1;
             RefreshBuildMenu();
         }
 

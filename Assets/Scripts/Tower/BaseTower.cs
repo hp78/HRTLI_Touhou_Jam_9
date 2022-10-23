@@ -50,6 +50,8 @@ public class BaseTower : MonoBehaviour
         GameObject go = Instantiate(_pfShot,transform.position,Quaternion.identity);
         go.GetComponent<ShotBehaviour>().SpawnBullet(_bulletStat, 
             _towerStat,direction);
+
+        _towerSpriteRender.flipX = (direction.x > 0);
     }
 
     public void SpawnTower(BulletStatSO bulletStat, TowerStatSO towerStat)

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abdc6fc48c10a640a7a9465296b7b11, type: 3}
   m_Name: 4-AoEBullet
   m_EditorClassIdentifier: 
-  bulletName: 
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
+  bulletName: Explosive Shot
+  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   cooldown: 0.2
-  cost: 1
+  cost: 5
   range: 1
   damage: -2
-  speed: 0
+  speed: 8
   pierce: 0
   dotDmg: 0
   dotDura: 0
