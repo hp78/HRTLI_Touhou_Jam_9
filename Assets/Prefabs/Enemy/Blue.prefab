@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 8
+  speed: 7.5
   spriteR: {fileID: 1896787846708567257}
   color: {r: 0.023529412, g: 0, b: 1, a: 1}
   childSpawn: {fileID: 5133708318551663607, guid: 5ca745f565d80f14fb2512c729ee8e50, type: 3}
