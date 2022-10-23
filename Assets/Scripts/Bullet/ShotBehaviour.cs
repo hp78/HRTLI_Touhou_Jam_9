@@ -50,7 +50,7 @@ public class ShotBehaviour : MonoBehaviour
 
         //
         _speed = Mathf.Clamp((bulletStat.speed + towerStat.speed),0.1f,99);
-        _pierce = Mathf.Clamp((bulletStat.pierce + towerStat.pierce), 1, 99);
+        _pierce = Mathf.Clamp((bulletStat.pierce + towerStat.pierce), 0, 99);
         _currPierce = _pierce;
 
         //
@@ -79,7 +79,7 @@ public class ShotBehaviour : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            --_currPierce;
+            _currPierce -= 1;
 
             EnemyBase eb = collision.GetComponent<EnemyBase>();
 
@@ -113,7 +113,7 @@ public class ShotBehaviour : MonoBehaviour
                         Instantiate(pf, transform.position, Quaternion.identity);
                     }
                 }
-
+                Debug.Log("Bullet despawned");
                 Destroy(gameObject);
             }
                 

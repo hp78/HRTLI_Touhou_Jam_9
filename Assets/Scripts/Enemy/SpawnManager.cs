@@ -80,11 +80,11 @@ public class SpawnManager : MonoBehaviour
 
     public void EndofWave()
     {
-
+        GameController.instance.ShowEndWaveScreen();
     }
 
     public void EndofStage()
     {
-
+        GameController.instance.ShowVictoryScreen();
     }
 }
