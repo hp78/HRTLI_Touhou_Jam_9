@@ -12,15 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abdc6fc48c10a640a7a9465296b7b11, type: 3}
   m_Name: 4-AoEBullet
   m_EditorClassIdentifier: 
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  bulletName: 
+  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
+  cooldown: 0.2
   cost: 1
   range: 1
-  cooldown: 0.1
-  damage: 1
-  speed: 10
-  pierce: 1
+  damage: -2
+  speed: 0
+  pierce: 0
   dotDmg: 0
   dotDura: 0
   slowVal: 0
   slowDura: 0
-  pfSpawnOnHit: []
+  boomerDmg: 0
+  pfSpawnOnHit:
+  - {fileID: 3019386599004610990, guid: fbc21cd7d35367840aed05db0ef6e14e, type: 3}
+  pfSpawnOnExpire: []

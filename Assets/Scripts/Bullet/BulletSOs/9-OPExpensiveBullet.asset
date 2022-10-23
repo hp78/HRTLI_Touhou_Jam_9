@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abdc6fc48c10a640a7a9465296b7b11, type: 3}
   m_Name: 9-OPExpensiveBullet
   m_EditorClassIdentifier: 
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  cost: 1
-  range: 1
-  cooldown: 0.1
-  damage: 1
+  bulletName: 
+  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
+  cooldown: 0
+  cost: 10
+  range: 3
+  damage: 5
   speed: 10
-  pierce: 1
-  dotDmg: 0
-  dotDura: 0
-  slowVal: 0
-  slowDura: 0
+  pierce: 3
+  dotDmg: 4
+  dotDura: 2
+  slowVal: 30
+  slowDura: 2
+  boomerDmg: 0
   pfSpawnOnHit: []
+  pfSpawnOnExpire: []
