@@ -5627,10 +5627,17 @@ MonoBehaviour:
   listOfWaves:
   - waves:
     - {fileID: 11400000, guid: c497ccb7c47b74f498b58fc7cea90838, type: 2}
-    - {fileID: 11400000, guid: 78273b0688754c9439c33f1960637c8f, type: 2}
-  - waves: []
+    - {fileID: 11400000, guid: d04bb90ebe4368d40873d1fb98587265, type: 2}
   - waves:
-    - {fileID: 11400000, guid: 26f8e959c91569c429563cd3d34f87c4, type: 2}
+    - {fileID: 11400000, guid: 82000c5411987fa4596a7b0ecd29dbf6, type: 2}
+    - {fileID: 11400000, guid: 64385b3675dd3394aa98b17b080c603f, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: 23ebca2a02d938541aa940d180160b1a, type: 2}
+    - {fileID: 11400000, guid: 348465584077fdf42a7781da08c9e59d, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: c12dd734c520d3740b065011da409fd4, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: 3563019698ba01042a85baa3ed683b82, type: 2}
   listOfEnemies: []
   directionShow: {fileID: 4272777295237634934}
   waveNumber: 0
@@ -5639,6 +5646,7 @@ MonoBehaviour:
   allSpawned: 0
   allDead: 0
   stageOngoing: 0
+  finalSpawned: 0
 --- !u!1 &4272777294337545922
 GameObject:
   m_ObjectHideFlags: 0
