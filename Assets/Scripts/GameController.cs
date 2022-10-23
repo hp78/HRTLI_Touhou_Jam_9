@@ -61,5 +61,8 @@ public class GameController : MonoBehaviour
             towerToggles[i].interactable = (unlockedTowers[i] > 0);
             bulletToggles[i].interactable = (unlockedBullets[i] > 0);
         }
+
+        towerToggles[0].Select();
+        bulletToggles[0].Select();
     }
 }
