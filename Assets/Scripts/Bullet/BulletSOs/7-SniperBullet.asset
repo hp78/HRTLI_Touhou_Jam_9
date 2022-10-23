@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletName: Sniper Shot
   gameSprite: {fileID: 21300000, guid: f4c1c45b0337cdb41af41a0b913123c5, type: 3}
   cooldown: 0.25
-  cost: 5
+  cost: 25
   range: 5
   damage: 7
   speed: 25

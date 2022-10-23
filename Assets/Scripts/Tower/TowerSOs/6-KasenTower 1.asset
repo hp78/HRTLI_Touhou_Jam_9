@@ -15,7 +15,7 @@ MonoBehaviour:
   towerName: Kasen Mode
   gameSprite: {fileID: 21300000, guid: 7e0d3f24a049c4a49ad719f7ac58d31b, type: 3}
   cooldown: 0.015
-  cost: 35
+  cost: 175
   range: 0.75
   damage: 1
   speed: 6

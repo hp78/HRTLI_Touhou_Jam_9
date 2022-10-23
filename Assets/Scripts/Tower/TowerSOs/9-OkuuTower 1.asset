@@ -15,7 +15,7 @@ MonoBehaviour:
   towerName: Okuu Mode
   gameSprite: {fileID: 21300000, guid: 13c03cd6961b08f44a4f20b656530b9e, type: 3}
   cooldown: 1.5
-  cost: 40
+  cost: 200
   range: 2
   damage: 10
   speed: 6

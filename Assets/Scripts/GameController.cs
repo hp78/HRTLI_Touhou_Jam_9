@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
         instance = this;
         RefreshBuildMenu();
         RefreshUpgrades();
-        AddGold(20);
+        AddGold(95);
         _lifeTxt.text = "Lives : " + currLife;
         _waveTxt.text = "Wave : 1";
     }

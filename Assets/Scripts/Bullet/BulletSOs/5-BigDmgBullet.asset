@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletName: Heavy Shot
   gameSprite: {fileID: 21300000, guid: b4d0ae680a0263d4091a0f0a0a2b0cd4, type: 3}
   cooldown: 0.35
-  cost: 20
+  cost: 100
   range: 1
   damage: 12
   speed: 2

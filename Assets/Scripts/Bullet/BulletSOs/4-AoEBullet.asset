@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletName: Explosive Shot
   gameSprite: {fileID: 21300000, guid: 129d4b1b461b7ce478b88b030d6821ac, type: 3}
   cooldown: 0.2
-  cost: 5
+  cost: 25
   range: 1
   damage: -2
   speed: 8

@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletName: Ghastly Shot
   gameSprite: {fileID: 21300000, guid: a5c15724c859ecc4f870cc08ededef6b, type: 3}
   cooldown: 0.25
-  cost: 25
+  cost: 125
   range: 2
   damage: -2
   speed: 7

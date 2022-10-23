@@ -15,7 +15,7 @@ MonoBehaviour:
   towerName: Reimu Mode
   gameSprite: {fileID: 21300000, guid: 458bfab3517c2fa4a9ade3d008020038, type: 3}
   cooldown: 0.5
-  cost: 20
+  cost: 100
   range: 5
   damage: 2
   speed: 15

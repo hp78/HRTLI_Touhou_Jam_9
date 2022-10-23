@@ -15,7 +15,7 @@ MonoBehaviour:
   towerName: Cirno Mode
   gameSprite: {fileID: 21300000, guid: 48ded58e2450cc44393f37474280c00f, type: 3}
   cooldown: 0.5
-  cost: 9
+  cost: 45
   range: 2
   damage: 1
   speed: 4

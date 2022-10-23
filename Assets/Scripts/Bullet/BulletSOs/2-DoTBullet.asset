@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletName: Poison Shot
   gameSprite: {fileID: 21300000, guid: c0e558eb61c70524382ff6ee585d04a2, type: 3}
   cooldown: 0.4
-  cost: 5
+  cost: 25
   range: 1
   damage: 4
   speed: 5
