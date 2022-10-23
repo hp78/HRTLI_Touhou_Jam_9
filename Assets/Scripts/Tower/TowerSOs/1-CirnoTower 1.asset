@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 1-CirnoTower 1
   m_EditorClassIdentifier: 
-  towerName: 
-  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  towerName: Cirno Mode
+  gameSprite: {fileID: 21300000, guid: 48ded58e2450cc44393f37474280c00f, type: 3}
   cooldown: 0.5
-  cost: 2
+  cost: 10
   range: 2
   damage: 1
   speed: 1

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 8-ReimuTower 1
   m_EditorClassIdentifier: 
-  towerName: 
-  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
+  towerName: Reimu Mode
+  gameSprite: {fileID: 21300000, guid: 458bfab3517c2fa4a9ade3d008020038, type: 3}
   cooldown: 0.5
-  cost: 4
+  cost: 20
   range: 5
   damage: 2
   speed: 3

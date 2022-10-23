@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 6-KasenTower 1
   m_EditorClassIdentifier: 
-  towerName: 
-  gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
+  towerName: Kasen Mode
+  gameSprite: {fileID: 21300000, guid: 7e0d3f24a049c4a49ad719f7ac58d31b, type: 3}
   cooldown: 0.015
-  cost: 7
+  cost: 35
   range: 0.75
   damage: 1
   speed: 1
