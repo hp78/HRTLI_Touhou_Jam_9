@@ -218,7 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   speed: 7.5
+  currency: 0
   spriteR: {fileID: 4609600735855552864}
+  spriteEye: {fileID: 5516482218282015080}
   color: {r: 0.74509805, g: 0.039215688, b: 0.7176471, a: 1}
   childSpawn: {fileID: 1140099064053188610, guid: 7d73075a027f82748ae9df8bedd2842b, type: 3}
   childSpawnAmount: 2
