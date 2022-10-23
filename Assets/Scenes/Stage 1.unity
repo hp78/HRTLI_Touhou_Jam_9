@@ -3286,22 +3286,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage 1 Spawner
       objectReference: {fileID: 0}
-    - target: {fileID: 4272777294334117080, guid: 782e23cdc191a2a46be337f5b9f1c437, type: 3}
-      propertyPath: listOfWaves.Array.data[1].waves.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4272777294334117080, guid: 782e23cdc191a2a46be337f5b9f1c437, type: 3}
-      propertyPath: listOfWaves.Array.data[0].waves.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: d04bb90ebe4368d40873d1fb98587265, type: 2}
-    - target: {fileID: 4272777294334117080, guid: 782e23cdc191a2a46be337f5b9f1c437, type: 3}
-      propertyPath: listOfWaves.Array.data[1].waves.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 82000c5411987fa4596a7b0ecd29dbf6, type: 2}
-    - target: {fileID: 4272777294334117080, guid: 782e23cdc191a2a46be337f5b9f1c437, type: 3}
-      propertyPath: listOfWaves.Array.data[1].waves.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 23ebca2a02d938541aa940d180160b1a, type: 2}
     - target: {fileID: 4272777294334117081, guid: 782e23cdc191a2a46be337f5b9f1c437, type: 3}
       propertyPath: m_RootOrder
       value: 2

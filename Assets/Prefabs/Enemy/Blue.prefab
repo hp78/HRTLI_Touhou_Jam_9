@@ -145,7 +145,7 @@ MonoBehaviour:
   dotEffect: {fileID: 3639865167889445868}
   color: {r: 0.023529412, g: 0, b: 1, a: 1}
   childSpawn: {fileID: 5133708318551663607, guid: 5ca745f565d80f14fb2512c729ee8e50, type: 3}
-  childSpawnAmount: 2
+  childSpawnAmount: 3
   childSpawnMulti: []
   childSpawnAmountMulti: 
   spawnMultipleInstead: 0

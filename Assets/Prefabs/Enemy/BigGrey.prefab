@@ -5344,8 +5344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  speed: 2.5
-  currency: 1
+  speed: 2
+  currency: 2
   spriteR: {fileID: 8665975796541508257}
   spriteEyes: {fileID: 611764719470089180}
   spriteHatR: {fileID: 0}

@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   speed: 3
-  currency: 1
+  currency: 2
   spriteR: {fileID: 3424170876325503857}
   spriteEyes: {fileID: 6898334384521378316}
   spriteHatR: {fileID: 0}
@@ -84,9 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51813d3312eaf5438afbdcb6fa3e5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedDuration: 1
+  speedDuration: 0.75
   speedCooldown: 3
-  speedMultiplier: 3
+  speedMultiplier: 2.25
   enemybase: {fileID: 5453837360734136797}
   speedEffect:
   - {fileID: 7259980590539435347}
