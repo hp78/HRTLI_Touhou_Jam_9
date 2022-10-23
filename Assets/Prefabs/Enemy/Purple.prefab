@@ -9842,7 +9842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57feb8a04682ab4783a46f2f40b8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 60
   speed: 2.5
   currency: 2
   spriteR: {fileID: 4609600735855552864}
@@ -9852,7 +9852,7 @@ MonoBehaviour:
   slowEffect: {fileID: 2838211114083927571}
   dotEffect: {fileID: 5373544778331425824}
   color: {r: 0.74509805, g: 0.039215688, b: 0.7176471, a: 1}
-  childSpawn: {fileID: 0}
+  childSpawn: {fileID: 5133708318551663607, guid: 5ca745f565d80f14fb2512c729ee8e50, type: 3}
   childSpawnAmount: 0
   childSpawnMulti:
   - {fileID: 1140099064053188610, guid: 7d73075a027f82748ae9df8bedd2842b, type: 3}

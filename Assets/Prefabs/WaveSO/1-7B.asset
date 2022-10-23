@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c015041f7d6f38841ae1971c0416edb4, type: 3}
-  m_Name: 2-4B
+  m_Name: 1-7B
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 4656383385045800849, guid: dee8a2c70f9aa034b8542459d23f9ce1, type: 3}
+  EnemyPrefab: {fileID: 5790177365889908149, guid: 014d90d6048a9c34d98f705251c32f30, type: 3}
   AmountToSpawn: 5
-  TimeStampToSpawn: 5
-  SpawnInterval: 5
+  TimeStampToSpawn: 0.5
+  SpawnInterval: 1
   Spawned: 0
-  SpawnFinish: 0
+  SpawnFinish: 1

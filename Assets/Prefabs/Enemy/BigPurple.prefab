@@ -9852,7 +9852,7 @@ MonoBehaviour:
   slowEffect: {fileID: 194593715107617182}
   dotEffect: {fileID: 5132729737414589399}
   color: {r: 0.4528302, g: 0.15592737, b: 0.44128397, a: 1}
-  childSpawn: {fileID: 0}
+  childSpawn: {fileID: 4656383385045800849}
   childSpawnAmount: 0
   childSpawnMulti:
   - {fileID: 1638112154022784158, guid: 06eb12ea7e8c6a6499ddf32bf171cfb7, type: 3}

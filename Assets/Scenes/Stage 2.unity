@@ -12396,6 +12396,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4499285375ab2824a9d0075bc586e601, type: 2}
     - {fileID: 11400000, guid: 075a7d9ff4d77d04f81baf3f0c288172, type: 2}
   - waves:
+    - {fileID: 11400000, guid: 9df2f4ab8347b5a40a068e5509eb9282, type: 2}
+    - {fileID: 11400000, guid: 3a5d80835cff1c24c97665766bf1f63d, type: 2}
+  - waves:
     - {fileID: 11400000, guid: eb8b939950210284abe663396f4f9a0e, type: 2}
   listOfEnemies: []
   directionShow: {fileID: 1156288319}

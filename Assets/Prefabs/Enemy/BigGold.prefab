@@ -14500,9 +14500,11 @@ MonoBehaviour:
   color: {r: 0.59607846, g: 0.57254905, b: 0, a: 1}
   childSpawn: {fileID: 8926392861397989844, guid: ba2838cdf53cf0946aff21647eb968a7, type: 3}
   childSpawnAmount: 5
-  childSpawnMulti: []
-  childSpawnAmountMulti: 
-  spawnMultipleInstead: 0
+  childSpawnMulti:
+  - {fileID: 8926392861397989844, guid: ba2838cdf53cf0946aff21647eb968a7, type: 3}
+  - {fileID: 1140099064053188610, guid: 7d73075a027f82748ae9df8bedd2842b, type: 3}
+  childSpawnAmountMulti: 0500000005000000
+  spawnMultipleInstead: 1
   movePoints: []
   spawner: {fileID: 0}
   col: {fileID: 2148397406382565598}
@@ -14518,8 +14520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058fa7f7e65019949b6f5631160bdaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invulduration: 5
-  invulCooldown: 5
+  invulduration: 3
+  invulCooldown: 2
   enemybase: {fileID: 344774308075204365}
   invulEffect: {fileID: 1587225511554166028}
 --- !u!58 &2148397406382565598
