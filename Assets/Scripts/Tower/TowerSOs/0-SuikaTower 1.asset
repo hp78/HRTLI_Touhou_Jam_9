@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af0d776e468364e8709e1e81804d42, type: 3}
   m_Name: 0-SuikaTower 1
   m_EditorClassIdentifier: 
+  towerName: 
   gameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cooldown: 0.1
+  cooldown: 0.3
   cost: 1
   range: 2
   damage: 1
@@ -23,4 +24,6 @@ MonoBehaviour:
   dotDura: 0
   slowVal: 0
   slowDura: 0
+  boomerDmg: 0
   pfSpawnOnHit: []
+  pfSpawnOnExpire: []
