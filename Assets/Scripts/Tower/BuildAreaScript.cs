@@ -22,6 +22,11 @@ public class BuildAreaScript : MonoBehaviour
         {
             TowerSpawner.instance.BuildTower();
         }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void SetRadius(float val)

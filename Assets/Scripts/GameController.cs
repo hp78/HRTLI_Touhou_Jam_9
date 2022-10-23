@@ -31,6 +31,25 @@ public class GameController : MonoBehaviour
     [SerializeField] Button _nextWaveButton;
 
     [Space(10)]
+    [SerializeField] TMP_Text _buildTowerCost;
+    [SerializeField] TMP_Text _buildBulletCost;
+    [Space(4)]
+    [SerializeField] TMP_Text _towerName;
+    [SerializeField] TMP_Text _bulletName;
+    [Space(4)]
+    [SerializeField] StatBar _buildDamageStat;
+    [SerializeField] StatBar _buildFireRateStat;
+    [SerializeField] StatBar _buildRangeStat;
+    [SerializeField] StatBar _buildSpeedStat;
+    [SerializeField] StatBar _buildPierceStat;
+    [Space(4)]
+    [SerializeField] StatBar _buildDotDmgStat;
+    [SerializeField] StatBar _buildDotDuraStat;
+    [Space(4)]
+    [SerializeField] StatBar _buildSlowValStat;
+    [SerializeField] StatBar _buildSlowDuraStat;
+
+    [Space(10)]
     [SerializeField] GameObject _playerUnlockPanel;
     [SerializeField] PlayerUnlockItem[] _playerUnlockItems;
 
@@ -94,6 +113,24 @@ public class GameController : MonoBehaviour
     public void RefreshBuildButton(TowerStatSO towerStat, BulletStatSO bulletStat)
     {
         _buyButton.interactable = (currGold >= (towerStat.cost + bulletStat.cost));
+
+        _buildTowerCost.text = "" +towerStat.cost;
+        _buildBulletCost.text = "" +bulletStat.cost;
+
+        _towerName.text = towerStat.towerName;
+        _bulletName.text = bulletStat.bulletName;
+
+        _buildDamageStat.SetBar(towerStat.damage + bulletStat.damage + 2);
+        _buildFireRateStat.SetBar((1 - towerStat.cooldown - bulletStat.cooldown) * 19f);
+        _buildRangeStat.SetBar(towerStat.range + bulletStat.range);
+        _buildSpeedStat.SetBar(towerStat.speed + bulletStat.speed - 3f);
+        _buildPierceStat.SetBar(towerStat.pierce + bulletStat.pierce);
+
+        _buildDotDmgStat.SetBar(towerStat.dotDmg + bulletStat.dotDmg);
+        _buildDotDuraStat.SetBar(towerStat.dotDura + bulletStat.dotDura);
+
+        _buildSlowValStat.SetBar((towerStat.slowVal + bulletStat.slowVal) * 19f);
+        _buildSlowDuraStat.SetBar(towerStat.slowDura + bulletStat.slowDura);
     }
 
     public void ShowEndWaveScreen()

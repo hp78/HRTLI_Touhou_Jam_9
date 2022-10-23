@@ -22,7 +22,7 @@ MonoBehaviour:
   pierce: 1
   dotDmg: 0
   dotDura: 0
-  slowVal: 50
+  slowVal: 0.5
   slowDura: 2
   boomerDmg: 0
   pfSpawnOnHit: []
