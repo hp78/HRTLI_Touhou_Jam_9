@@ -17,6 +17,8 @@ public class BaseTower : MonoBehaviour
     [SerializeField] BulletStatSO _bulletStat;
     [SerializeField] TowerStatSO _towerStat;
 
+    [SerializeField] AudioSource _shootSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,8 @@ public class BaseTower : MonoBehaviour
 
     public virtual void Shoot(Transform enemy)
     {
+        _shootSFX.PlayOneShot(_shootSFX.clip);
+
         Vector3 direction = enemy.position - transform.position;
 
         GameObject go = Instantiate(_pfShot,transform.position,Quaternion.identity);
