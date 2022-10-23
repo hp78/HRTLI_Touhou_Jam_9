@@ -27,7 +27,10 @@ public class GameController : MonoBehaviour
     [SerializeField] TMP_Text _goldTxt;
     [SerializeField] TMP_Text _waveTxt;
 
+    [SerializeField] Button _buyButton;
+
     [Space(10)]
+    [SerializeField] GameObject _playerUnlockPanel;
     [SerializeField] PlayerUnlockItem[] _playerUnlockItems;
 
     // Start is called before the first frame update
@@ -35,6 +38,10 @@ public class GameController : MonoBehaviour
     {
         instance = this;
         RefreshBuildMenu();
+        RefreshUpgrades();
+        AddGold(20);
+        _lifeTxt.text = "Lives : " + currLife;
+        _waveTxt.text = "Wave : 1";
     }
 
     // Update is called once per frame
@@ -79,9 +86,15 @@ public class GameController : MonoBehaviour
         bulletToggles[0].Select();
     }
 
+    public void RefreshBuildButton(TowerStatSO towerStat, BulletStatSO bulletStat)
+    {
+        _buyButton.interactable = (currGold > (towerStat.cost + bulletStat.cost));
+    }
+
     public void ShowEndWaveScreen()
     {
         AddInterest();
+        _playerUnlockPanel.SetActive(true);
     }
 
     public void ShowVictoryScreen()
@@ -114,7 +127,7 @@ public class GameController : MonoBehaviour
             }
             else if(val < 20)
             {
-                if (unlockedBullets[val] < 1)
+                if (unlockedBullets[val - 10] < 1)
                     isValid = true;
             }
             else
@@ -170,7 +183,7 @@ public class GameController : MonoBehaviour
         // misc
         else if(val == 20)
         {
-            AddGold(50);
+            AddGold((int)((currWave + 1)*Random.Range(1,14.99f)));
         }
         else if(val == 21)
         {

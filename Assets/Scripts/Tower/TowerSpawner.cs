@@ -13,6 +13,7 @@ public class TowerSpawner : MonoBehaviour
 
     [SerializeField] GameObject _buildPanel;
     [SerializeField] GameObject _mouseBuildArea;
+    [SerializeField] BuildAreaScript _buildAreaScript;
 
     // Start is called before the first frame update
     void Start()
@@ -31,22 +32,32 @@ public class TowerSpawner : MonoBehaviour
     public void SetCurrTower(TowerStatSO towerSO)
     {
         _currTowerSO = towerSO;
+        RefreshPurchaseAbility();
     }
 
     public void SetCurrBullet(BulletStatSO bulletSO)
     {
         _currBulletSO = bulletSO;
+        RefreshPurchaseAbility();
+    }
+
+    void RefreshPurchaseAbility()
+    {
+        GameController.instance.RefreshBuildButton(_currTowerSO, _currBulletSO);
     }
 
     public void BtnSetBuildLocation()
     {
         _mouseBuildArea.SetActive(true);
+        _buildAreaScript.SetRadius(_currTowerSO.range + _currBulletSO.range);
     }
 
-    public void TestBuildTower()
+    public void BuildTower()
     {
         _mouseBuildArea.SetActive(false);
         GameObject go = Instantiate(_baseTowerPrefab,_mouseBuildArea.transform.position,Quaternion.identity);
         go.GetComponent<BaseTower>().SpawnTower(_currBulletSO, _currTowerSO);
+
+        GameController.instance.AddGold(-(_currTowerSO.cost + _currBulletSO.cost));
     }
 }

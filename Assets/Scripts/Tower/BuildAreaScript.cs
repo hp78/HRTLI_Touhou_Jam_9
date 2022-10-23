@@ -7,8 +7,10 @@ public class BuildAreaScript : MonoBehaviour
     [SerializeField] Color canBuildColor;
     [SerializeField] Color cannotBuildColor;
 
+    [SerializeField] Transform rangeRadius;
     [SerializeField] SpriteRenderer spriteRender;
     bool canBuild = false;
+
 
     // Update is called once per frame
     void Update()
@@ -18,8 +20,13 @@ public class BuildAreaScript : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && canBuild)
         {
-            TowerSpawner.instance.TestBuildTower();
+            TowerSpawner.instance.BuildTower();
         }
+    }
+
+    public void SetRadius(float val)
+    {
+        rangeRadius.localScale = new Vector3(val * 2, val * 2, 1);
     }
 
     private void FixedUpdate()
