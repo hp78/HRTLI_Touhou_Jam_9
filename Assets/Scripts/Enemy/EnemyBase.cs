@@ -86,6 +86,7 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDoT(float dmg, float duration)
     {
+        if(this.gameObject.activeSelf)
         if(dmg >= dotVal)
         {
             dotVal = dmg;
