@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameController : MonoBehaviour
@@ -53,6 +54,11 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject _playerUnlockPanel;
     [SerializeField] PlayerUnlockItem[] _playerUnlockItems;
 
+
+    [Space(10)]
+    [SerializeField] GameObject _winPanel;
+    [SerializeField] GameObject _losePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +86,9 @@ public class GameController : MonoBehaviour
     {
         --currLife;
         _lifeTxt.text = "Lives : " + currLife;
+
+        if (currLife < 0)
+            ShowLoseScreen();
     }
 
     public void AddLife(int val)
@@ -148,12 +157,19 @@ public class GameController : MonoBehaviour
 
     public void ShowVictoryScreen()
     {
-
+        _winPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ShowLoseScreen()
     {
+        _losePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void TogglePauseMenu()
