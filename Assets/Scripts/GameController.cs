@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     [SerializeField] TMP_Text _goldTxt;
     [SerializeField] TMP_Text _waveTxt;
 
+    [Space(10)]
+    [SerializeField] PlayerUnlockItem[] _playerUnlockItems;
 
     // Start is called before the first frame update
     void Start()
@@ -97,18 +99,72 @@ public class GameController : MonoBehaviour
 
     }
 
+    int GetItemToUpgrade()
+    {
+        int val = 0;
+        bool isValid = false;
+
+        while(!isValid)
+        {
+            val = Random.Range(0, 22);
+            if(val < 10)
+            {
+                if (unlockedTowers[val] < 1)
+                    isValid = true;
+            }
+            else if(val < 20)
+            {
+                if (unlockedBullets[val] < 1)
+                    isValid = true;
+            }
+            else
+            {
+                isValid = true;
+            }
+        }
+
+        return val;
+    }
+    public void RefreshUpgrades()
+    {
+        foreach(PlayerUnlockItem pui in _playerUnlockItems)
+        {
+            int val = GetItemToUpgrade();
+            pui.SetUpgradeIndex(val);
+
+            if (val < 10)
+            {
+                pui.SetTower(towerStats[val]);
+            }
+            else if (val < 20)
+            {
+                pui.SetBullet(bulletStats[val - 10]);
+            }
+            else if (val == 20)
+            {
+                pui.SetGold();
+            }
+            else
+            {
+                pui.SetLife();
+            }
+        }
+    }
+
     public void SelectUpgrade(int val)
     {
         // towers
         if(val < 10)
         {
-
+            unlockedTowers[val] += 1;
+            RefreshBuildMenu();
         }
 
         // shots
         else if(val <20)
         {
-
+            unlockedBullets[val] += 1;
+            RefreshBuildMenu();
         }
 
         // misc
