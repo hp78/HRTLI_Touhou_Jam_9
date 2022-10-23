@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseTower : MonoBehaviour
 {
-    [SerializeField] List<Transform> _enemyList;
+    [SerializeField] List<EnemyBase> _enemyList;
 
     [SerializeField] SpriteRenderer _towerSpriteRender;
     [SerializeField] CircleCollider2D _rangeCollider;
@@ -20,7 +20,7 @@ public class BaseTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _enemyList = new List<EnemyBase>();
     }
 
     // Update is called once per frame
@@ -73,12 +73,12 @@ public class BaseTower : MonoBehaviour
         //
         if(_enemyList.Count > 0)
         {
-            foreach(Transform t in _enemyList)
+            foreach(EnemyBase b in _enemyList)
             {
-                float currDist = (t.position - transform.position).magnitude;
-                if (currDist < closestDist)
+                float currDist = (b.transform.position - transform.position).magnitude;
+                if (b.gameObject.activeInHierarchy && currDist < closestDist)
                 {
-                    closestEnemy = t;
+                    closestEnemy = b.transform;
                     closestDist = currDist;
                 }
             }
@@ -87,20 +87,24 @@ public class BaseTower : MonoBehaviour
         return closestEnemy;
     }
 
+    public void AddEnemyToList(EnemyBase enemy)
+    {
+        if(!_enemyList.Contains(enemy))
+            _enemyList.Add(enemy);
+    }
+
+    public void RemoveEnemyFromList(EnemyBase enemy)
+    {
+        _enemyList.Remove(enemy);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TriggerEnter : " + collision.ToString());
-        if(collision.CompareTag("Enemy"))
-        {
-            _enemyList.Add(collision.transform);
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            _enemyList.Remove(collision.transform);
-        }
+        
     }
 }

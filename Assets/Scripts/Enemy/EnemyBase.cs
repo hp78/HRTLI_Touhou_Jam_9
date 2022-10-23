@@ -11,7 +11,6 @@ public class EnemyBase : MonoBehaviour
 
     [Space(25)]
     public SpriteRenderer spriteR;
-    public SpriteRenderer spriteEye;
     public Color color;
 
     [Space(25)]
@@ -34,11 +33,35 @@ public class EnemyBase : MonoBehaviour
 
     float flickerDuration;
 
+
+    List<BaseTower> towerList;
+
     // Start is called before the first frame update
     void Start()
     {
+        towerList = new List<BaseTower>();
         spriteR.color = color;
         spawner.listOfEnemies.Add(this.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +72,6 @@ public class EnemyBase : MonoBehaviour
             Movement();
             Flicker();
             SlowOverTime();
-            SpriteFlip();
         }
     }
 
@@ -79,7 +101,9 @@ public class EnemyBase : MonoBehaviour
     {
         health -= dmg;
         if (health <= 0f)
+        {
             OnDeath();
+        }
         else
         {
             flickerDuration = 0.1f;
@@ -128,6 +152,13 @@ public class EnemyBase : MonoBehaviour
 
     void OnDeath()
     {
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+
         if (dead)
             return;
 
@@ -148,6 +179,15 @@ public class EnemyBase : MonoBehaviour
 
     IEnumerator SpawnChild()
     {
+
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+
+
         for (int i = 0; i < childSpawnAmount; i++)
         {
             float ranx = Random.Range(-0.2f, 0.2f);
@@ -171,11 +211,25 @@ public class EnemyBase : MonoBehaviour
 
         }
 
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+
         this.gameObject.SetActive(false);
         yield return 0;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("TowerRadius"))
+        {
+            BaseTower bt = collision.GetComponent<BaseTower>();
+            towerList.Add(bt);
+            bt.AddEnemyToList(this);
+        }
+
         if (collision.CompareTag("DamageBox"))
         {
             int results;
@@ -193,6 +247,17 @@ public class EnemyBase : MonoBehaviour
             int results;
             if (int.TryParse(collision.gameObject.name, out results))
                 TakeSlow(results/10f, 3f);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TowerRadius"))
+        {
+            BaseTower bt = collision.GetComponent<BaseTower>();
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
         }
     }
 
@@ -214,17 +279,4 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    void SpriteFlip()
-    {
-        if (this.transform.position.x < movePoints[currentPoint].position.x)
-        {
-            spriteR.flipX = false;
-            spriteEye.flipX = false;
-        }
-        else
-        {
-            spriteR.flipX = true;
-            spriteEye.flipX = true;
-        }
-    }
 }
