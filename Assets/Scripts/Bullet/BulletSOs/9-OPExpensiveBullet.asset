@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abdc6fc48c10a640a7a9465296b7b11, type: 3}
   m_Name: 9-OPExpensiveBullet
   m_EditorClassIdentifier: 
-  bulletName: 
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
+  bulletName: GOLD Shot
+  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   cooldown: 0
-  cost: 10
+  cost: 50
   range: 3
   damage: 5
-  speed: 10
+  speed: 20
   pierce: 3
   dotDmg: 4
   dotDura: 2

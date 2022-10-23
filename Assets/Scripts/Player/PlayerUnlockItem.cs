@@ -24,6 +24,11 @@ public class PlayerUnlockItem : MonoBehaviour
         
     }
 
+    public void OnClick()
+    {
+        GameController.instance.SelectUpgrade(upgradeIndex);
+    }
+
     public void SetUpgradeIndex(int val)
     {
         upgradeIndex = val;

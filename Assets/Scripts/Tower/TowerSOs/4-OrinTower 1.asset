@@ -18,7 +18,7 @@ MonoBehaviour:
   cost: 25
   range: 4
   damage: 0
-  speed: 5
+  speed: 9
   pierce: 0
   dotDmg: 0
   dotDura: 0
