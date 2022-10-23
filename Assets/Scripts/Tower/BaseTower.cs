@@ -29,7 +29,7 @@ public class BaseTower : MonoBehaviour
         UpdateShot(Time.deltaTime);
     }
 
-    void UpdateShot(float deltaTime)
+    public virtual void UpdateShot(float deltaTime)
     {
         _currShotCooldown -= deltaTime;
         if(_currShotCooldown < 0)
@@ -43,7 +43,7 @@ public class BaseTower : MonoBehaviour
         }
     }
 
-    void Shoot(Transform enemy)
+    public virtual void Shoot(Transform enemy)
     {
         Vector3 direction = enemy.position - transform.position;
 
