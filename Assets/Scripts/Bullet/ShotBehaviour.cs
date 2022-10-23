@@ -113,7 +113,7 @@ public class ShotBehaviour : MonoBehaviour
                         Instantiate(pf, transform.position, Quaternion.identity);
                     }
                 }
-                Debug.Log("Bullet despawned");
+                //Debug.Log("Bullet despawned");
                 Destroy(gameObject);
             }
                 
