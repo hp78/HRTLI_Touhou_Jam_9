@@ -86,7 +86,7 @@ public class ShotBehaviour : MonoBehaviour
             if (eb == null) return;
 
             // do damage to enemy
-            eb.TakeDamage(_bulletStat.damage + _towerStat.damage);
+            eb.TakeDamage( Mathf.Clamp((_bulletStat.damage + _towerStat.damage),0.1667f,99f));
 
             // do dot to enemy
             eb.TakeDoT(_dotDmg, _dotDura);
