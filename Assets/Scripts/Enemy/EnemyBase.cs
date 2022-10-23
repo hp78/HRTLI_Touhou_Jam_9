@@ -299,24 +299,6 @@ public class EnemyBase : MonoBehaviour
             bt.AddEnemyToList(this);
         }
 
-        if (collision.CompareTag("DamageBox"))
-        {
-            int results;
-            if(int.TryParse(collision.gameObject.name, out results))
-             TakeDamage(results);
-        }
-        if (collision.CompareTag("DoTBox"))
-        {
-            int results;
-            if (int.TryParse(collision.gameObject.name, out results))
-                TakeDoT(results, 5f);
-        }
-        if (collision.CompareTag("SlowBox"))
-        {
-            int results;
-            if (int.TryParse(collision.gameObject.name, out results))
-                TakeSlow(results/10f, 3f);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

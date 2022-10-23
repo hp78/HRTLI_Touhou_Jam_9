@@ -45,13 +45,14 @@ public class SpawnManager : MonoBehaviour
 
 
         if (!endOfStage)
-        foreach (EnemySpawner es in listOfSpawners)
         {
-            es.ShowDirection();
+            foreach (EnemySpawner es in listOfSpawners)
+            {
+                es.ShowDirection();
+            }
+            endOfWaves = true;
+            EndofWave();
         }
-        endOfWaves = true;
-        EndofWave();
-
     }
 
     public void CheckSpawnersFinishAllWaves()
