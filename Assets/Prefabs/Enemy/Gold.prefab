@@ -14686,7 +14686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058fa7f7e65019949b6f5631160bdaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invulduration: 3
+  invulduration: 2
   invulCooldown: 3
   enemybase: {fileID: 3419040024244169580}
   invulEffect: {fileID: 4448652156273551725}

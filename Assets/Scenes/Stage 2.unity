@@ -12384,10 +12384,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 572faf67370cf0d4cb1266bb3a9ad36c, type: 2}
   - waves:
     - {fileID: 11400000, guid: 67ec807206a11c24690a7abce9af9da6, type: 2}
+    - {fileID: 11400000, guid: 497e180e6f0c094439877b12fec91bbb, type: 2}
   - waves:
     - {fileID: 11400000, guid: b91b915275c11304d83daa354056b460, type: 2}
+    - {fileID: 11400000, guid: 9f9b680dc61f592449e9ad3c604a08c4, type: 2}
   - waves:
-    - {fileID: 11400000, guid: 3563019698ba01042a85baa3ed683b82, type: 2}
+    - {fileID: 11400000, guid: 2bd059566ed5d774aa38443efccbf034, type: 2}
+    - {fileID: 11400000, guid: a4bd7e55b17597a4d96b2f00bf648f54, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: eb8b939950210284abe663396f4f9a0e, type: 2}
   listOfEnemies: []
   directionShow: {fileID: 1156288319}
   waveNumber: 0
@@ -14201,7 +14206,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 0bd16f6155145cd41b3f71dc35cce33c, type: 3}
-  m_Color: {r: 0.3207547, g: 0.30411178, b: 0.30411178, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

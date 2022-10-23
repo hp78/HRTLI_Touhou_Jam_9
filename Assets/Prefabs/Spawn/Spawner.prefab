@@ -5639,6 +5639,15 @@ MonoBehaviour:
   - waves:
     - {fileID: 11400000, guid: 3563019698ba01042a85baa3ed683b82, type: 2}
   - waves:
+    - {fileID: 11400000, guid: bdf9968acbb73d342b6eaaa6aa0551bf, type: 2}
+    - {fileID: 11400000, guid: e7f54a9bd7810d14bae2c6e7b8f76211, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: 2e9427a03176c52429f6769b22420097, type: 2}
+  - waves:
+    - {fileID: 11400000, guid: a3e11b23f9ca7e94f83972cd4dc95588, type: 2}
+    - {fileID: 11400000, guid: 075a7d9ff4d77d04f81baf3f0c288172, type: 2}
+    - {fileID: 11400000, guid: 4499285375ab2824a9d0075bc586e601, type: 2}
+  - waves:
     - {fileID: 11400000, guid: 764aefc4fc60e1849af71f6859de5665, type: 2}
   listOfEnemies: []
   directionShow: {fileID: 4272777295237634934}
