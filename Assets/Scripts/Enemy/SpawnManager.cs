@@ -6,14 +6,15 @@ public class SpawnManager : MonoBehaviour
 {
 
     public List<EnemySpawner> listOfSpawners;
-
+    public int currentWave = 0;
+    public int totalWave;
     public bool endOfWaves = false;
     public bool endOfStage = false;
 
     // Start is called before the first frame update
     void Start()
     {
-       // StartNextWave();
+        totalWave = listOfSpawners[0].listOfWaves.Count;
     }
 
     // Update is called once per frame
@@ -47,6 +48,7 @@ public class SpawnManager : MonoBehaviour
         {
             es.ShowDirection();
         }
+        EndofWave();
 
     }
 
@@ -61,7 +63,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
         endOfStage = true;
-
+        EndofStage();
     }
 
     void StartNextWave()
@@ -71,5 +73,18 @@ public class SpawnManager : MonoBehaviour
             es.StartWave();
         }
         endOfWaves = false;
+        if(!endOfStage)
+        currentWave++;
+
+    }
+
+    public void EndofWave()
+    {
+
+    }
+
+    public void EndofStage()
+    {
+
     }
 }

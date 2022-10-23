@@ -6,7 +6,7 @@ public class EnemyBase : MonoBehaviour
 {
     public float health;
     public float speed;
-
+    public float currency;
     bool dead = false;
 
     [Space(25)]
