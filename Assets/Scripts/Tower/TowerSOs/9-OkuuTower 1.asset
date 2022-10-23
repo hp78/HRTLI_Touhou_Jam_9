@@ -19,11 +19,12 @@ MonoBehaviour:
   range: 2
   damage: 10
   speed: 0.5
-  pierce: 1
+  pierce: 0
   dotDmg: 2
   dotDura: 2
   slowVal: 0
   slowDura: 0
   boomerDmg: 0
-  pfSpawnOnHit: []
+  pfSpawnOnHit:
+  - {fileID: 4917750942640814617, guid: 8d8d5233b269af94dac0174f9485e366, type: 3}
   pfSpawnOnExpire: []
