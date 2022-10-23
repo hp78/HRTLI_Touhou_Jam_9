@@ -76,9 +76,19 @@ public class ShotBehaviour : MonoBehaviour
         {
             --_currPierce;
 
+            EnemyBase eb = collision.GetComponent<EnemyBase>();
+
+            if (eb == null) return;
+
             // do damage to enemy
+            eb.TakeDamage(_bulletStat.damage + _towerStat.damage);
+
             // do dot to enemy
+            eb.TakeDoT(_dotDmg, _dotDura);
+
             // do slow to enemy
+            eb.TakeSlow(_slowVal, _slowDura);
+            
             // spawn on contact prefabs
 
             if (_currPierce < 1)
