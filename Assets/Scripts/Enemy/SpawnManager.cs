@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static SpawnManager instance;
 
     public List<EnemySpawner> listOfSpawners;
     public int currentWave = 0;
@@ -31,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void CheckSpawnersAreDoneForCurrentWave()
+    public void CheckSpawnersAreDoneForCurrentWave()
     {
         endOfWaves = true;
         foreach (EnemySpawner es in listOfSpawners)
@@ -52,7 +53,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    void CheckSpawnersFinishAllWaves()
+    public void CheckSpawnersFinishAllWaves()
     {
         foreach (EnemySpawner es in listOfSpawners)
         {
@@ -66,7 +67,7 @@ public class SpawnManager : MonoBehaviour
         EndofStage();
     }
 
-    void StartNextWave()
+    public void StartNextWave()
     {
         foreach (EnemySpawner es in listOfSpawners)
         {
@@ -78,12 +79,12 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    public void EndofWave()
+     public void EndofWave()
     {
         GameController.instance.ShowEndWaveScreen();
     }
 
-    public void EndofStage()
+     public void EndofStage()
     {
         GameController.instance.ShowVictoryScreen();
     }

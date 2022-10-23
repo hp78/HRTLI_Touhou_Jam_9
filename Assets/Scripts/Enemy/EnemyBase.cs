@@ -111,7 +111,7 @@ public class EnemyBase : MonoBehaviour
     public void ReachedEnd()
     {
         this.gameObject.SetActive(false);
-
+        GameController.instance.LoseLife();
     }
 
     public void TakeDamage(float dmg)
