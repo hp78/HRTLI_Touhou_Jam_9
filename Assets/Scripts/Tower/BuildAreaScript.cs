@@ -16,7 +16,7 @@ public class BuildAreaScript : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x,mousePos.y,0)) + new Vector3(0,0,10);
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && canBuild)
         {
             TowerSpawner.instance.TestBuildTower();
         }

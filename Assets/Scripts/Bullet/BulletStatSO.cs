@@ -43,4 +43,7 @@ public class BulletStatSO : ScriptableObject
 
     [Space(5)]
     public List<GameObject> pfSpawnOnHit;
+
+    [Space(5)]
+    public List<GameObject> pfSpawnOnExpire;
 }
