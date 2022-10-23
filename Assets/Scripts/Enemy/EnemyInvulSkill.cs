@@ -21,7 +21,27 @@ public class EnemyInvulSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dura > 0.0f) invulduration -= Time.deltaTime;
+        InvulSkill();
+    }
+
+    void InvulSkill()
+    {
         if (cd > 0.0f) cd -= Time.deltaTime;
+
+        if (cd <0.0f)
+        {
+            invulEffect.SetActive(true);
+            enemybase.col.enabled = false;
+            dura -= Time.deltaTime;
+
+            if(dura < 0.0f)
+            {
+                invulEffect.SetActive(false);
+                enemybase.col.enabled = true;
+                cd = invulCooldown;
+                dura = invulduration;
+            }
+        }
+
     }
 }
