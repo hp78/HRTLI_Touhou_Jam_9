@@ -11,11 +11,17 @@ public class EnemyBase : MonoBehaviour
 
     [Space(25)]
     public SpriteRenderer spriteR;
+    public SpriteRenderer spriteEyes;
     public Color color;
 
     [Space(25)]
     public GameObject childSpawn;
     public int childSpawnAmount;
+
+    public GameObject[] childSpawnMulti;
+    public int[] childSpawnAmountMulti;
+
+    public bool spawnMultipleInstead;
 
     [Space(25)]
     public List<Transform> movePoints;
@@ -72,6 +78,7 @@ public class EnemyBase : MonoBehaviour
             Movement();
             Flicker();
             SlowOverTime();
+            FlipSprite();
         }
     }
 
@@ -169,12 +176,64 @@ public class EnemyBase : MonoBehaviour
 
         if (childSpawn)
         {
-            StartCoroutine(SpawnChild());
+            if (spawnMultipleInstead)
+                StartCoroutine(SpawnMultipleChild());
+            else
+                 StartCoroutine(SpawnChild());
+            
         }
         else
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator SpawnMultipleChild()
+    {
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+
+        int child = childSpawnMulti.Length;
+
+        for (int c = 0; c < child; c++)
+        {
+            for (int i = 0; i < childSpawnAmountMulti[c]; i++)
+            {
+                float ranx = Random.Range(-0.2f, 0.2f);
+                float rany = Random.Range(-0.2f, 0.2f);
+                GameObject temp = Instantiate(childSpawnMulti[c], this.transform.position + new Vector3(ranx, rany, 0.0f), Quaternion.identity);
+
+                List<Transform> tempList = new List<Transform>();
+
+                for (int j = currentPoint; j < movePoints.Count; j++)
+                    tempList.Add(movePoints[j]);
+
+
+                EnemyBase tempEB = temp.GetComponent<EnemyBase>();
+
+                tempEB.spawner = spawner;
+                tempEB.SetMovePoints(tempList);
+
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+
+            }
+        }
+
+        foreach (BaseTower bt in towerList)
+        {
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+            bt.RemoveEnemyFromList(this);
+        }
+
+        this.gameObject.SetActive(false);
+        yield return 0;
     }
 
     IEnumerator SpawnChild()
@@ -279,4 +338,18 @@ public class EnemyBase : MonoBehaviour
 
     }
 
+
+    void FlipSprite()
+    {
+        if(this.transform.position.x < movePoints[currentPoint].position.x)
+        {
+            spriteEyes.flipX = false;
+            spriteR.flipX = false;
+        }
+        else
+        {
+            spriteEyes.flipX = true;
+            spriteR.flipX = true;
+        }
+    }
 }
