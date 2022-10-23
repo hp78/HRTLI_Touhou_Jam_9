@@ -15,7 +15,7 @@ public class EnemySpeed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cd = speedCooldown/2f;
+        cd = -1f;
         dura = speedDuration;
         baseSpeed = enemybase.speed;
     }

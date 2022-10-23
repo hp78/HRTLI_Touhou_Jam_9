@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1-SlowBullet
   m_EditorClassIdentifier: 
   bulletName: Slow Shot
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  gameSprite: {fileID: 21300000, guid: 2cc2e389ca9d0fe4babe1f5c8d38d276, type: 3}
   cooldown: 0.2
   cost: 10
   range: 0

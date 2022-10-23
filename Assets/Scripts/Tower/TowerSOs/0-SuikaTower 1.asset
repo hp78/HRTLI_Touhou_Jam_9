@@ -19,7 +19,7 @@ MonoBehaviour:
   range: 2
   damage: 1
   speed: 5
-  pierce: 1
+  pierce: 0
   dotDmg: 0
   dotDura: 0
   slowVal: 0

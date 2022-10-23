@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2-DoTBullet
   m_EditorClassIdentifier: 
   bulletName: Poison Shot
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  gameSprite: {fileID: 21300000, guid: c0e558eb61c70524382ff6ee585d04a2, type: 3}
   cooldown: 0.4
   cost: 5
   range: 1
