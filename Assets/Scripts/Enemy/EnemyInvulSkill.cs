@@ -14,7 +14,7 @@ public class EnemyInvulSkill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cd = invulCooldown/2f;
+        cd = -1;
         dura = invulduration;
     }
 

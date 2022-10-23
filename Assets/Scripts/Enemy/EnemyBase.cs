@@ -6,7 +6,7 @@ public class EnemyBase : MonoBehaviour
 {
     public float health;
     public float speed;
-    public float currency;
+    public int currency;
     bool dead = false;
 
     [Space(25)]
@@ -22,6 +22,7 @@ public class EnemyBase : MonoBehaviour
     [Space(25)]
     public GameObject childSpawn;
     public int childSpawnAmount;
+    bool spawnChild=false;
 
     public GameObject[] childSpawnMulti;
     public int[] childSpawnAmountMulti;
@@ -119,9 +120,12 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        if (dead) return;
         health -= dmg;
         if (health <= 0f)
         {
+            dead = true;
+            col.enabled = false;
             OnDeath();
         }
         else
@@ -195,30 +199,35 @@ public class EnemyBase : MonoBehaviour
             bt.RemoveEnemyFromList(this);
         }
 
-        if (dead)
-            return;
-
-        dead = true;
-        col.enabled = false;
-
-        GameController.instance.AddGold(currentPoint);
-
-        if (childSpawn)
+        if (!spawnChild)
         {
-            if (spawnMultipleInstead)
-                StartCoroutine(SpawnMultipleChild());
+            if (childSpawn)
+            {
+                if (spawnMultipleInstead)
+                {
+
+                    StartCoroutine(SpawnMultipleChild());
+                }
+                else
+                {
+                    StartCoroutine(SpawnChild());
+                }
+
+            }
             else
-                 StartCoroutine(SpawnChild());
-            
+            {
+                this.gameObject.SetActive(false);
+                spawnChild = true;
+            }
+            GameController.instance.AddGold(currency);
+
         }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+
     }
 
     IEnumerator SpawnMultipleChild()
     {
+        spawnChild = true;
         foreach (BaseTower bt in towerList)
         {
             bt.RemoveEnemyFromList(this);
@@ -267,7 +276,7 @@ public class EnemyBase : MonoBehaviour
 
     IEnumerator SpawnChild()
     {
-
+        spawnChild = true;
         foreach (BaseTower bt in towerList)
         {
             bt.RemoveEnemyFromList(this);
