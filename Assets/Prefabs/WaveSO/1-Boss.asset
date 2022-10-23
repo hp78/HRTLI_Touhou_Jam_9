@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c015041f7d6f38841ae1971c0416edb4, type: 3}
-  m_Name: 1-6A
+  m_Name: 1-Boss
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 1638112154022784158, guid: 06eb12ea7e8c6a6499ddf32bf171cfb7, type: 3}
-  AmountToSpawn: 5
+  EnemyPrefab: {fileID: 634698069447848024, guid: 3c2d35976824a6f458722e3a742d36f5, type: 3}
+  AmountToSpawn: 3
   TimeStampToSpawn: 0
-  SpawnInterval: 2
+  SpawnInterval: 10
   Spawned: 0
   SpawnFinish: 1

@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedDuration: 0.75
   speedCooldown: 3
-  speedMultiplier: 2.25
+  speedMultiplier: 2.75
   enemybase: {fileID: 5453837360734136797}
   speedEffect:
   - {fileID: 7259980590539435347}
