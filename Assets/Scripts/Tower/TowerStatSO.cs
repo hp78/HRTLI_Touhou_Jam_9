@@ -44,4 +44,7 @@ public class TowerStatSO : ScriptableObject
 
     [Space(5)]
     public List<GameObject> pfSpawnOnHit;
+
+    [Space(5)]
+    public List<GameObject> pfSpawnOnExpire;
 }

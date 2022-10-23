@@ -20,6 +20,7 @@ public class ShotBehaviour : MonoBehaviour
     float _slowDura;
 
     List<GameObject> _pfSpawnOnHit = new List<GameObject>();
+    List<GameObject> _pfSpawnExpire = new List<GameObject>();
 
     BulletStatSO _bulletStat;
     TowerStatSO _towerStat;
@@ -67,6 +68,10 @@ public class ShotBehaviour : MonoBehaviour
         _pfSpawnOnHit.AddRange(towerStat.pfSpawnOnHit);
 
         //
+        _pfSpawnExpire.AddRange(bulletStat.pfSpawnOnExpire);
+        _pfSpawnExpire.AddRange(towerStat.pfSpawnOnExpire);
+
+        //
         _direction = direction.normalized;
     }
 
@@ -90,9 +95,28 @@ public class ShotBehaviour : MonoBehaviour
             eb.TakeSlow(_slowVal, _slowDura);
             
             // spawn on contact prefabs
+            if(_pfSpawnOnHit.Count > 0)
+            {
+                foreach(GameObject pf in _pfSpawnOnHit)
+                {
+                    Instantiate(pf, transform.position, Quaternion.identity);
+                }
+            }
 
-            if (_currPierce < 1)
+            if (_currPierce < 0)
+            {
+                // spawn on destroyed prefabs
+                if (_pfSpawnExpire.Count > 0)
+                {
+                    foreach (GameObject pf in _pfSpawnExpire)
+                    {
+                        Instantiate(pf, transform.position, Quaternion.identity);
+                    }
+                }
+
                 Destroy(gameObject);
+            }
+                
         }
 
         if(collision.CompareTag("MapBoundary"))
