@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57feb8a04682ab4783a46f2f40b8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  health: 400
   speed: 1.5
   currency: 3
   spriteR: {fileID: 4068481270527486028}
@@ -155,7 +155,8 @@ MonoBehaviour:
   childSpawnMulti:
   - {fileID: 5258932996348777141, guid: ab7d3d2115bbafe448aad161c622608a, type: 3}
   - {fileID: 2251194970579991397, guid: 39cf34c0cc9eb7e4e93d2bd7eec686b0, type: 3}
-  childSpawnAmountMulti: 0300000005000000
+  - {fileID: 1638112154022784158, guid: 06eb12ea7e8c6a6499ddf32bf171cfb7, type: 3}
+  childSpawnAmountMulti: 050000000500000005000000
   spawnMultipleInstead: 1
   movePoints: []
   spawner: {fileID: 0}
