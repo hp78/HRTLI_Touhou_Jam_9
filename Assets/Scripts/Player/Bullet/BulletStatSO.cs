@@ -7,6 +7,9 @@ using UnityEngine;
 public class BulletStatSO : ScriptableObject
 {
     [Space(5)]
+    public string bulletName;
+
+    [Space(5)]
     public Sprite gameSprite;
 
     [Space(5)]

@@ -8,6 +8,9 @@ using UnityEngine;
 public class TowerStatSO : ScriptableObject
 {
     [Space(5)]
+    public string towerName;
+
+    [Space(5)]
     public Sprite gameSprite;
 
     [Space(5)]

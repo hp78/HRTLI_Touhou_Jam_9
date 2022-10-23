@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,14 +11,21 @@ public class GameController : MonoBehaviour
     [SerializeField] int currLife;
     [SerializeField] int currWave = 0;
 
-    [Space(5)]
-    [SerializeField] bool[] unlockedTowers = new bool[10];
-    [SerializeField] bool[] unlockedBullets = new bool[10];
+    [Space(10)]
+    [SerializeField] TowerStatSO[] towerStats;
+    [SerializeField] BulletStatSO[] bulletStats;
+
+    [Space(10)]
+    [SerializeField] Toggle[] towerToggles = new Toggle[10];
+    [SerializeField] int[] unlockedTowers = new int[10];
+    [SerializeField] Toggle[] bulletToggles = new Toggle[10];
+    [SerializeField] int[] unlockedBullets = new int[10];
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        RefreshBuildMenu();
     }
 
     // Update is called once per frame
@@ -44,5 +52,14 @@ public class GameController : MonoBehaviour
     public void AddInterest()
     {
         currGold = currGold + (int)Mathf.Ceil(currGold * 0.1f);
+    }
+
+    public void RefreshBuildMenu()
+    {
+        for(int i = 0; i < 10; ++i)
+        {
+            towerToggles[i].interactable = (unlockedTowers[i] > 0);
+            bulletToggles[i].interactable = (unlockedBullets[i] > 0);
+        }
     }
 }
