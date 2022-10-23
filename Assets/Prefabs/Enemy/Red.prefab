@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   speed: 3
-  currency: 0
+  currency: 1
   spriteR: {fileID: 8612668252318022627}
   spriteEye: {fileID: 556352828850823838}
   color: {r: 1, g: 0, b: 0, a: 1}

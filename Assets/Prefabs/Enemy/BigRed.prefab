@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57feb8a04682ab4783a46f2f40b8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 25
   speed: 2
-  currency: 0
+  currency: 1
   spriteR: {fileID: 8174043926472671886}
   spriteEye: {fileID: 7222842833976729988}
   color: {r: 0.39607847, g: 0.10196079, b: 0.10196079, a: 1}
