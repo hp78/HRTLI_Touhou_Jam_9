@@ -5034,10 +5034,13 @@ MonoBehaviour:
   speed: 3
   currency: 3
   spriteR: {fileID: 5429137332244308416}
-  spriteEye: {fileID: 4280386072953174205}
+  spriteEyes: {fileID: 4280386072953174205}
   color: {r: 0.83137256, g: 0.80784315, b: 0.2, a: 1}
   childSpawn: {fileID: 0}
   childSpawnAmount: 0
+  childSpawnMulti: []
+  childSpawnAmountMulti: 
+  spawnMultipleInstead: 0
   movePoints: []
   spawner: {fileID: 0}
   col: {fileID: 3921114304688417983}

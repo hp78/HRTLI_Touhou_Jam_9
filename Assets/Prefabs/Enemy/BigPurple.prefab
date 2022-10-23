@@ -220,7 +220,7 @@ MonoBehaviour:
   speed: 2
   currency: 2
   spriteR: {fileID: 3766699694980468605}
-  spriteEyes: {fileID: 0}
+  spriteEyes: {fileID: 5129860841849225077}
   color: {r: 0.4528302, g: 0.15592737, b: 0.44128397, a: 1}
   childSpawn: {fileID: 0}
   childSpawnAmount: 0

@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     public List<GameObject> listOfEnemies;
 
-    public GameObject directionShow;
+    public TrailRenderer directionShow;
 
     public int waveNumber;
     public float timeStamp;
@@ -168,8 +168,18 @@ public class EnemySpawner : MonoBehaviour
             if (currentPoint + 1 < movePoints.Count)
                 currentPoint++;
 
-            else currentPoint = 0;
+            else
+            {
+                currentPoint = 0;
+            }
         }
+
+        if (currentPoint == 0)
+        {
+            directionShow.emitting = false; 
+        }
+        else
+            directionShow.emitting =true;
 
     }
 
