@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     public bool allSpawned;
     public bool allDead;
     public bool stageOngoing;
+    public bool finalSpawned;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
             foreach (WaveDataSO wso in w.waves)
             {
                 wso.Spawned = false;
+                wso.SpawnFinish = false;
             }
         }
         ShowDirection();
@@ -72,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 stageOngoing = false;
                 allDead = true;
                 allSpawned = true;
+                finalSpawned = true;
 
                 if (waveNumber + 1 < listOfWaves.Count) waveNumber++;
                 else noMoreWave = true;
@@ -82,6 +85,8 @@ public class EnemySpawner : MonoBehaviour
                 stageOngoing = true;
                 allDead = false;
                 allSpawned = false;
+                finalSpawned = false;
+
             }
         }
         showDirection = false;
@@ -117,7 +122,7 @@ public class EnemySpawner : MonoBehaviour
 
     void CheckWaveSO()
     {
-        allSpawned = true;
+
         foreach(WaveDataSO so in listOfWaves[waveNumber].waves)
         {
             
@@ -129,6 +134,15 @@ public class EnemySpawner : MonoBehaviour
                 allSpawned = false;
             }
         }
+        foreach (WaveDataSO so in listOfWaves[waveNumber].waves)
+        {
+
+            if (!so.SpawnFinish)
+            {
+                return;
+            }
+        }
+        allSpawned = true;
     }
 
     IEnumerator SpawnWave(WaveDataSO waveData)
@@ -144,6 +158,8 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(waveData.SpawnInterval);
         }
+        waveData.SpawnFinish = true;
+
         yield return 0;
     }
 

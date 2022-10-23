@@ -12,4 +12,5 @@ public class WaveDataSO : ScriptableObject
     public float SpawnInterval;
 
     public bool Spawned;
+    public bool SpawnFinish;
 }

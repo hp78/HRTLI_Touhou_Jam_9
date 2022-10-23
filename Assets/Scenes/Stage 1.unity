@@ -9065,6 +9065,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8502477767051947625, guid: 96851561bd90bc846935714e4ef2aa28, type: 3}
+      propertyPath: endOfWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502477767051947625, guid: 96851561bd90bc846935714e4ef2aa28, type: 3}
       propertyPath: listOfSpawners.Array.size
       value: 1
       objectReference: {fileID: 0}
