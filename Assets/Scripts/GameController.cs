@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     [SerializeField] int currGold = 0;
-    [SerializeField] int currLife;
+    [SerializeField] int currLife = 50;
     [SerializeField] int currWave = 0;
 
     [Space(10)]
@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] int[] unlockedTowers = new int[10];
     [SerializeField] Toggle[] bulletToggles = new Toggle[10];
     [SerializeField] int[] unlockedBullets = new int[10];
+
 
     // Start is called before the first frame update
     void Start()

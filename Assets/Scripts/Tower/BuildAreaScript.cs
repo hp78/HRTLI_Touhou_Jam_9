@@ -30,7 +30,7 @@ public class BuildAreaScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("TowerPosition"))
+        if (collision.CompareTag("TowerPosition") || collision.CompareTag("Unbuildable"))
         {
             spriteRender.color = cannotBuildColor;
             canBuild = false;
