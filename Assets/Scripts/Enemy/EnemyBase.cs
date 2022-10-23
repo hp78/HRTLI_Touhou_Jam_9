@@ -12,6 +12,8 @@ public class EnemyBase : MonoBehaviour
     [Space(25)]
     public SpriteRenderer spriteR;
     public SpriteRenderer spriteEyes;
+    public SpriteRenderer spriteHatR;
+    public SpriteRenderer spriteHatL;
     public Color color;
 
     [Space(25)]
@@ -100,7 +102,15 @@ public class EnemyBase : MonoBehaviour
         {
             if (currentPoint + 1 < movePoints.Count)
                 currentPoint++;
+            else
+                ReachedEnd();
         }    
+
+    }
+
+    public void ReachedEnd()
+    {
+        this.gameObject.SetActive(false);
 
     }
 
@@ -345,11 +355,15 @@ public class EnemyBase : MonoBehaviour
         {
             spriteEyes.flipX = false;
             spriteR.flipX = false;
+            if (spriteHatR) spriteHatR.enabled = true;
+            if (spriteHatL) spriteHatL.enabled = false;
         }
         else
         {
             spriteEyes.flipX = true;
             spriteR.flipX = true;
+            if (spriteHatR) spriteHatR.enabled = false;
+            if (spriteHatL) spriteHatL.enabled = true;
         }
     }
 }

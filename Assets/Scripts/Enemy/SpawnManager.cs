@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (!endOfWaves) CheckSpawnersAreDoneForCurrentWave();
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && endOfWaves)
             StartNextWave();
 
         if(!endOfStage)

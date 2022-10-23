@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1-3B
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 5133708318551663607, guid: 5ca745f565d80f14fb2512c729ee8e50, type: 3}
-  AmountToSpawn: 25
-  TimeStampToSpawn: 5
-  SpawnInterval: 0.1
-  Spawned: 0
+  AmountToSpawn: 30
+  TimeStampToSpawn: 10
+  SpawnInterval: 0.3
+  Spawned: 1
