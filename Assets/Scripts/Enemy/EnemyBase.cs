@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    public int health;
+    public float health;
     public float speed;
 
     bool dead = false;
@@ -24,6 +24,13 @@ public class EnemyBase : MonoBehaviour
 
     public Collider2D col;
 
+
+    float slowDuration;
+    float slowVal=0f;
+
+    float dotDuration;
+    float dotVal=0f;
+
     float flickerDuration;
 
     // Start is called before the first frame update
@@ -40,6 +47,7 @@ public class EnemyBase : MonoBehaviour
         {
             Movement();
             Flicker();
+            SlowOverTime();
         }
     }
 
@@ -55,7 +63,7 @@ public class EnemyBase : MonoBehaviour
     {
         if ((Vector2.Distance(this.transform.position, movePoints[currentPoint].position) > 0.1f))
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, movePoints[currentPoint].position, speed * Time.deltaTime);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, movePoints[currentPoint].position, speed * (1.0f - slowVal) * Time.deltaTime);
         }
         else
         {
@@ -65,15 +73,54 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(float dmg)
     {
         health -= dmg;
-        if (health <= 0)
+        if (health <= 0f)
             OnDeath();
         else
         {
-            flickerDuration = 0.15f;
+            flickerDuration = 0.1f;
         }
+    }
+
+    public void TakeDoT(float dmg, float duration)
+    {
+        if(dmg >= dotVal)
+        {
+            dotVal = dmg;
+            dotDuration = duration;
+            StopCoroutine(DamageOverTime());
+            StartCoroutine(DamageOverTime());
+        }
+ 
+    }
+
+    public void TakeSlow(float val, float duration)
+    {
+        if(val >= slowVal)
+        {
+            slowVal = val;
+            slowDuration = duration;
+        }
+    }
+
+    void SlowOverTime()
+    {
+        if (slowDuration < 0.0f) slowVal = 0.0f;
+        else slowDuration -= Time.deltaTime;
+    }
+
+    IEnumerator DamageOverTime()
+    {
+        while(dotDuration >= 0.0f)
+        {
+            TakeDamage(dotVal / 4.0f);
+            yield return new WaitForSeconds(0.25f);
+            dotDuration -= 0.25f;
+        }
+        dotVal = 0;
+        yield return 0;
     }
 
     void OnDeath()
@@ -111,6 +158,9 @@ public class EnemyBase : MonoBehaviour
             tempEB.SetMovePoints(tempList);
 
             yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
         }
 
         this.gameObject.SetActive(false);
@@ -123,6 +173,18 @@ public class EnemyBase : MonoBehaviour
             int results;
             if(int.TryParse(collision.gameObject.name, out results))
              TakeDamage(results);
+        }
+        if (collision.CompareTag("DoTBox"))
+        {
+            int results;
+            if (int.TryParse(collision.gameObject.name, out results))
+                TakeDoT(results, 5f);
+        }
+        if (collision.CompareTag("SlowBox"))
+        {
+            int results;
+            if (int.TryParse(collision.gameObject.name, out results))
+                TakeSlow(results/10f, 3f);
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9080558887535138750}
   - component: {fileID: 480242148706575591}
   m_Layer: 0
-  m_Name: Maroon
+  m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57feb8a04682ab4783a46f2f40b8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  speed: 4
+  health: 25
+  speed: 7.5
   spriteR: {fileID: 9080558887535138750}
-  color: {r: 0.41509432, g: 0.20950516, b: 0.20950516, a: 1}
+  color: {r: 0.74509805, g: 0.039215688, b: 0.7176471, a: 1}
   childSpawn: {fileID: 1140099064053188610, guid: 7d73075a027f82748ae9df8bedd2842b, type: 3}
-  childSpawnAmount: 10
+  childSpawnAmount: 2
   movePoints: []
   spawner: {fileID: 0}
   col: {fileID: 480242148706575591}
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4156863, g: 0.20784315, b: 0.20784315, a: 1}
+  m_Color: {r: 0.745283, g: 0.03867035, b: 0.71644944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
