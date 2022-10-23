@@ -11,6 +11,7 @@ public class EnemyBase : MonoBehaviour
 
     [Space(25)]
     public SpriteRenderer spriteR;
+    public SpriteRenderer spriteEye;
     public Color color;
 
     [Space(25)]
@@ -48,6 +49,7 @@ public class EnemyBase : MonoBehaviour
             Movement();
             Flicker();
             SlowOverTime();
+            SpriteFlip();
         }
     }
 
@@ -205,5 +207,19 @@ public class EnemyBase : MonoBehaviour
         else
             spriteR.color = color;
 
+    }
+
+    void SpriteFlip()
+    {
+        if (this.transform.position.x < movePoints[currentPoint].position.x)
+        {
+            spriteR.flipX = false;
+            spriteEye.flipX = false;
+        }
+        else
+        {
+            spriteR.flipX = true;
+            spriteEye.flipX = true;
+        }
     }
 }

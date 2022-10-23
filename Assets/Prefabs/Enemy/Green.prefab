@@ -49,8 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  speed: 8
+  speed: 5
+  currency: 0
   spriteR: {fileID: 4875679760601378478}
+  spriteEye: {fileID: 6612476246619462681}
   color: {r: 0, g: 0.5882353, b: 0.058823533, a: 1}
   childSpawn: {fileID: 3111864450242142187, guid: f9b836d1d13a5ea46bd5a9738648ff08, type: 3}
   childSpawnAmount: 2
