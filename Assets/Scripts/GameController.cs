@@ -136,6 +136,7 @@ public class GameController : MonoBehaviour
     public void ShowEndWaveScreen()
     {
         AddInterest();
+        RefreshUpgrades();
         _playerUnlockPanel.SetActive(true);
         _nextWaveButton.interactable = true;
     }

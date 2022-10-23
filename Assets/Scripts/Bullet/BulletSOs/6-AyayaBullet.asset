@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 6-AyayaBullet
   m_EditorClassIdentifier: 
   bulletName: Rapid Shot
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  gameSprite: {fileID: 21300000, guid: 8bc3cf0d862ef9845818922f1652bcf5, type: 3}
   cooldown: -0.025
   cost: 15
   range: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 9-OPExpensiveBullet
   m_EditorClassIdentifier: 
   bulletName: GOLD Shot
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  gameSprite: {fileID: 21300000, guid: 63eb016cfae253d4eacc206a8c70dc76, type: 3}
   cooldown: 0
   cost: 50
   range: 3

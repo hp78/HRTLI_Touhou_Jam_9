@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 8-OrinBullet
   m_EditorClassIdentifier: 
   bulletName: Ghastly Shot
-  gameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  gameSprite: {fileID: 21300000, guid: a5c15724c859ecc4f870cc08ededef6b, type: 3}
   cooldown: 0.25
   cost: 25
   range: 2
